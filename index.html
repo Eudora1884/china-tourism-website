@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>探索中国 - 您的专属入境游体验</title>
+    <meta name="description" content="专业的中国入境游服务，提供定制化旅行体验、当地导游服务和精选景点门票。体验真正的中华文化。">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                    colors: {
+                        // Enhanced Brand Colors
+                        'primary': '#1a73e8',
+                        'primary-dark': '#1557b0',
+                        'primary-light': '#4285f4',
+                        'secondary': '#ff6f42',
+                        'secondary-dark': '#e8542e',
+                        'accent': '#34a853',
+                        'accent-dark': '#2d8f47',
+                        'warning': '#fbbc05',
+                        'warning-dark': '#ea9900',
+                        
+                        // Enhanced Text Colors
+                        'text-primary': '#202124',
+                        'text-secondary': '#5f6368',
+                        'text-muted': '#9aa0a6',
+                        'text-light': '#dadce0',
+                        
+                        // Enhanced Background Colors
+                        'bg-light': '#f8f9fa',
+                        'bg-lighter': '#fafbfc',
+                        'bg-white': '#ffffff',
+                        'bg-gradient-start': '#f8f9fa',
+                        'bg-gradient-end': '#e8f0fe',
+                        
+                        // Modern Gray Scale (Google-inspired)
+                        'gray-50': '#f8f9fa',
+                        'gray-100': '#f1f3f4',
+                        'gray-200': '#e8eaed',
+                        'gray-300': '#dadce0',
+                        'gray-400': '#bdc1c6',
+                        'gray-500': '#9aa0a6',
+                        'gray-600': '#80868b',
+                        'gray-700': '#5f6368',
+                        'gray-800': '#3c4043',
+                        'gray-900': '#202124',
+                    },
+                    borderRadius: {
+                        'modern': '8px',
+                        'modern-lg': '12px',
+                        'modern-xl': '16px',
+                        'modern-2xl': '20px',
+                    },
+                    boxShadow: {
+                        'modern': '0 1px 3px rgba(60, 64, 67, 0.3), 0 4px 8px rgba(60, 64, 67, 0.15)',
+                        'modern-lg': '0 2px 6px rgba(60, 64, 67, 0.3), 0 8px 24px rgba(60, 64, 67, 0.15)',
+                        'modern-xl': '0 4px 12px rgba(60, 64, 67, 0.3), 0 16px 40px rgba(60, 64, 67, 0.15)',
+                        'card': '0 1px 2px rgba(60, 64, 67, 0.3), 0 2px 6px rgba(60, 64, 67, 0.15)',
+                        'card-hover': '0 4px 8px rgba(60, 64, 67, 0.3), 0 12px 28px rgba(60, 64, 67, 0.15)',
+                        'card-active': '0 8px 16px rgba(60, 64, 67, 0.3), 0 16px 32px rgba(60, 64, 67, 0.15)',
+                        'button': '0 1px 2px rgba(26, 115, 232, 0.3), 0 1px 3px rgba(26, 115, 232, 0.15)',
+                        'button-hover': '0 1px 3px rgba(26, 115, 232, 0.3), 0 4px 8px rgba(26, 115, 232, 0.15)',
+                        'floating': '0 8px 16px rgba(60, 64, 67, 0.15), 0 16px 32px rgba(60, 64, 67, 0.15)',
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '88': '22rem',
+                        '120': '30rem',
+                        '144': '36rem',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+                        'slide-up': 'slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
+                        'scale-in': 'scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-gentle': 'bounceGentle 2s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @keyframes fadeIn {
+            from { 
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from { 
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes bounceGentle {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        /* Enhanced Card Styles */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+            z-index: 1;
+        }
+        
+        .card-hover:hover::before {
+            left: 100%;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 8px 32px rgba(60, 64, 67, 0.2), 0 2px 6px rgba(60, 64, 67, 0.1);
+        }
+        
+        /* Enhanced Button Styles */
+        .btn-modern {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            font-weight: 500;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-modern::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: width 0.6s, height 0.6s;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+        
+        .btn-modern:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .btn-modern:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #1a73e8 0%, #4285f4 100%);
+            color: white;
+            box-shadow: 0 2px 8px rgba(26, 115, 232, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #1557b0 0%, #1a73e8 100%);
+            box-shadow: 0 4px 16px rgba(26, 115, 232, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #ff6f42 0%, #ff8a65 100%);
+            color: white;
+            box-shadow: 0 2px 8px rgba(255, 111, 66, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #e8542e 0%, #ff6f42 100%);
+            box-shadow: 0 4px 16px rgba(255, 111, 66, 0.4);
+        }
+        
+        .btn-accent {
+            background: linear-gradient(135deg, #34a853 0%, #66bb6a 100%);
+            color: white;
+            box-shadow: 0 2px 8px rgba(52, 168, 83, 0.3);
+        }
+        
+        .btn-accent:hover {
+            background: linear-gradient(135deg, #2d8f47 0%, #34a853 100%);
+            box-shadow: 0 4px 16px rgba(52, 168, 83, 0.4);
+        }
+        
+        /* Enhanced Netflix-style Hero Background */
+        .hero-bg {
+            background: 
+                linear-gradient(135deg, rgba(26, 115, 232, 0.8) 0%, rgba(52, 168, 83, 0.6) 50%, rgba(255, 111, 66, 0.7) 100%),
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+                url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=1920&h=1080&fit=crop') center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 19px;
+            overflow: hidden;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(26, 115, 232, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(52, 168, 83, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(255, 111, 66, 0.2) 0%, transparent 50%);
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(transparent, rgba(248, 249, 250, 0.1));
+        }
+        
+        /* Enhanced Typography */
+        .text-primary {
+            color: #202124;
+        }
+        
+        .text-secondary {
+            color: #5f6368;
+        }
+        
+        .text-muted {
+            color: #9aa0a6;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #1a73e8 0%, #34a853 50%, #ff6f42 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Enhanced Card Shadows */
+        .card-modern {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3), 0 4px 8px rgba(60, 64, 67, 0.15);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #1a73e8, #34a853, #ff6f42, #fbbc05);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .card-modern:hover::before {
+            opacity: 1;
+        }
+        
+        .card-modern:hover {
+            box-shadow: 0 4px 8px rgba(60, 64, 67, 0.3), 0 12px 28px rgba(60, 64, 67, 0.15);
+        }
+        
+        /* Enhanced section spacing - Netflix style */
+        .section-padding {
+            padding: 3rem 0;
+        }
+        
+        .section-padding-lg {
+            padding: 4rem 0;
+        }
+        
+        /* Enhanced focus states */
+        .focus-modern:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.3);
+            border-color: #1a73e8;
+        }
+        
+        /* Floating elements */
+        .floating-card {
+            animation: bounceGentle 4s ease-in-out infinite;
+        }
+        
+        .floating-card:nth-child(2n) {
+            animation-delay: 1s;
+        }
+        
+        .floating-card:nth-child(3n) {
+            animation-delay: 2s;
+        }
+        
+        /* Netflix-style text effects */
+        .hero-title {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-subtitle {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Enhanced hero button styles */
+        .hero-button-primary {
+            background: linear-gradient(135deg, #1a73e8 0%, #4285f4 100%);
+            box-shadow: 0 4px 20px rgba(26, 115, 232, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-button-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.8s;
+        }
+        
+        .hero-button-primary:hover::before {
+            left: 100%;
+        }
+        
+        .hero-button-primary:hover {
+            box-shadow: 0 8px 30px rgba(26, 115, 232, 0.6);
+            transform: translateY(-3px) scale(1.05);
+            background: linear-gradient(135deg, #1557b0 0%, #1a73e8 100%);
+        }
+        
+        /* Enhanced backdrop blur for hero buttons */
+        .hero-button-secondary {
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-button-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.8s;
+        }
+        
+        .hero-button-secondary:hover::before {
+            left: 100%;
+        }
+        
+        .hero-button-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(25px);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-3px) scale(1.05);
+        }
+        
+        /* Enhanced navigation */
+        .nav-enhanced {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-enhanced::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #1a73e8, #34a853);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-enhanced:hover::after {
+            width: 100%;
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f3f4;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #1a73e8, #34a853);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #1557b0, #2d8f47);
+        }
+        
+        /* 文本阴影工具类 */
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* 额外的动效类 */
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+        
+        /* 渐变文本动画 */
+        .text-gradient-animated {
+            background: linear-gradient(-45deg, #1a73e8, #34a853, #ff6f42, #fbbc05);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* 加载状态 */
+        .loading {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        /* 模态框动画 */
+        .modal-content {
+            animation: modalSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        /* 城市卡片悬停效果 */
+        .city-card-overlay {
+            background: linear-gradient(45deg, rgba(26, 115, 232, 0.9) 0%, rgba(52, 168, 83, 0.8) 100%);
+        }
+        
+        /* 景点卡片动画 */
+        .attraction-card {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .attraction-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(60, 64, 67, 0.15);
+        }
+        
+        /* 美食标签悬停效果 */
+        .food-tag {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .food-tag:hover {
+            transform: translateY(-2px) scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-bg-light text-text-primary smooth-scroll">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-card">
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                        <span class="material-icons text-white text-lg">explore</span>
+                    </div>
+                    <span class="text-xl font-semibold text-text-primary">探索中国</span>
+                </div>
+
+                <!-- 桌面导航 -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="text-text-secondary hover:text-primary font-medium transition-all duration-300 nav-link nav-enhanced px-3 py-2 rounded-modern hover:bg-primary/5">首页</a>
+                    <a href="#destinations" class="text-text-secondary hover:text-primary font-medium transition-all duration-300 nav-link nav-enhanced px-3 py-2 rounded-modern hover:bg-primary/5">目的地</a>
+                    <a href="#itineraries" class="text-text-secondary hover:text-primary font-medium transition-all duration-300 nav-link nav-enhanced px-3 py-2 rounded-modern hover:bg-primary/5">行程</a>
+                    <a href="#about" class="text-text-secondary hover:text-primary font-medium transition-all duration-300 nav-link nav-enhanced px-3 py-2 rounded-modern hover:bg-primary/5">关于我们</a>
+                </div>
+
+                <!-- 右侧按钮组 -->
+                <div class="flex items-center space-x-3">
+                    <!-- 桌面端More按钮 -->
+                    <button onclick="openFeedbackModal()" class="hidden md:flex items-center bg-primary text-white px-5 py-2.5 rounded-modern font-medium btn-modern btn-primary hover:bg-primary-dark focus-modern transition-all duration-300 space-x-2">
+                        <span class="material-icons text-sm">contact_support</span>
+                        <span>More?</span>
+                    </button>
+                    
+                    <!-- 移动端菜单按钮 -->
+                    <button class="md:hidden p-2.5 rounded-modern hover:bg-gray-100 transition-colors duration-200" id="mobile-menu-btn">
+                        <span class="material-icons text-gray-600">menu</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 移动端导航菜单 -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-4 pt-3 pb-4 space-y-2 bg-white border-t border-gray-200 shadow-lg">
+                    <a href="#home" class="flex items-center px-4 py-3 text-text-secondary hover:text-primary hover:bg-primary/5 rounded-modern font-medium nav-link transition-all duration-200">
+                        <span class="material-icons text-sm mr-3">home</span>
+                        首页
+                    </a>
+                    <a href="#destinations" class="flex items-center px-4 py-3 text-text-secondary hover:text-primary hover:bg-primary/5 rounded-modern font-medium nav-link transition-all duration-200">
+                        <span class="material-icons text-sm mr-3">place</span>
+                        目的地
+                    </a>
+                    <a href="#itineraries" class="flex items-center px-4 py-3 text-text-secondary hover:text-primary hover:bg-primary/5 rounded-modern font-medium nav-link transition-all duration-200">
+                        <span class="material-icons text-sm mr-3">map</span>
+                        行程
+                    </a>
+                    <a href="#about" class="flex items-center px-4 py-3 text-text-secondary hover:text-primary hover:bg-primary/5 rounded-modern font-medium nav-link transition-all duration-200">
+                        <span class="material-icons text-sm mr-3">info</span>
+                        关于我们
+                    </a>
+                    <div class="border-t border-gray-100 pt-2 mt-2">
+                        <button onclick="openFeedbackModal(); toggleMobileMenu();" class="flex items-center w-full px-4 py-3 text-primary hover:bg-primary/5 rounded-modern font-medium transition-all duration-200">
+                            <span class="material-icons text-sm mr-3">contact_support</span>
+                            联系我们
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Netflix-style Hero Section -->
+    <section id="home" class="hero-bg">
+        <div class="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 w-full" style="transform: translateY(19px);">
+            <div class="text-center animate-fade-in">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight tracking-tight hero-title">
+                    精选中国旅行指南
+                </h1>
+                <p class="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed font-light hero-subtitle">
+                    我们为您整理了热门目的地、特色体验和实用服务，让您的中国之旅规划更简单。
+                </p>
+                
+                <div class="flex items-center justify-center">
+                    <a href="#destinations" class="hero-button-primary text-white px-8 py-3 rounded-modern font-semibold text-lg btn-modern flex items-center space-x-2 nav-link transition-all duration-300">
+                        <span>开始探索</span>
+                        <span class="material-icons text-lg">explore</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 热门目的地 -->
+    <section id="destinations" class="section-padding-lg bg-white relative overflow-hidden">
+        <!-- 装饰背景 -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-2/3 bg-gradient-to-r from-accent/5 to-transparent"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4 animate-fade-in">热门目的地</h2>
+                <p class="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed animate-slide-up">探索中国最受欢迎的旅游城市</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="destinations-grid">
+                <!-- 目的地卡片将通过JavaScript动态生成 -->
+            </div>
+
+            <!-- 更多目的地按钮 - 当前隐藏，城市数量增加时可重新显示 -->
+            <div class="text-center mt-12 hidden">
+                <button class="bg-white text-primary border-2 border-primary px-10 py-4 rounded-modern-lg font-semibold btn-modern hover:bg-primary hover:text-white transition-all duration-300 shadow-card hover:shadow-card-hover">
+                    <span class="mr-2">查看更多目的地</span>
+                    <span class="material-icons text-lg">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- 精选行程 -->
+    <section id="itineraries" class="section-padding-lg bg-gradient-to-br from-bg-light to-white relative overflow-hidden">
+        <!-- 装饰元素 -->
+        <div class="absolute top-1/4 right-0 w-96 h-96 bg-gradient-to-l from-secondary/10 to-transparent rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 left-0 w-80 h-80 bg-gradient-to-r from-warning/10 to-transparent rounded-full blur-3xl"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4 animate-fade-in">精选行程</h2>
+                <p class="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed animate-slide-up">专业设计的旅行路线，为您打造完美的中国体验</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="itineraries-grid">
+                <!-- 行程卡片将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="section-padding-lg bg-white relative">
+        <!-- 装饰背景 -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gradient mb-8 animate-fade-in">关于我们</h2>
+                
+                <div class="bg-white/80 backdrop-blur-sm rounded-modern-2xl p-8 md:p-12 card-modern shadow-floating floating-card">
+                    <div class="flex items-center justify-center mb-8">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
+                            <span class="material-icons text-white text-2xl">explore</span>
+                        </div>
+                    </div>
+                    <p class="text-xl md:text-2xl text-text-secondary leading-relaxed">
+                        我们致力于为您精选最地道的中国旅行资源与服务。在这里，您可以发现热门目的地、特色体验和实用旅行指南，并通过我们精选的合作伙伴链接，轻松预订您的行程。我们的目标是让您的中国之旅规划更简单、更高效。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心服务 -->
+    <section class="section-padding-lg bg-gradient-to-br from-bg-lighter to-bg-light">
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gradient mb-4 animate-fade-in">我们的核心服务</h2>
+                <p class="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed animate-slide-up">精选合作伙伴，为您提供高品质的旅行预订服务</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="core-services-grid">
+                <!-- 核心服务卡片将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 需求收集 -->
+    <section class="section-padding-lg bg-gradient-to-br from-bg-light to-bg-lighter relative overflow-hidden">
+        <!-- 装饰元素 -->
+        <div class="absolute top-0 left-1/4 w-64 h-64 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-br from-accent/15 to-transparent rounded-full blur-3xl"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gradient mb-4 tracking-tight animate-fade-in">您最期待的旅行体验</h2>
+                <p class="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed animate-slide-up">分享您的想法，帮助我们提供更好的服务</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- 需求投票 -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-modern-2xl card-modern p-8 floating-card shadow-floating">
+                    <div class="mb-10">
+                        <div class="flex items-center justify-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary-light rounded-full flex items-center justify-center">
+                                <span class="material-icons text-white text-xl">poll</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-text-primary mb-4 text-center">功能需求投票</h3>
+                        <p class="text-text-secondary text-center">选择您最感兴趣的服务</p>
+                    </div>
+                    <div id="feature-poll">
+                        <!-- 投票选项将通过JavaScript动态生成 -->
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-gray-100">
+                        <div class="flex items-center justify-center text-sm text-text-muted">
+                            <span class="material-icons text-text-muted mr-2 text-sm">people</span>
+                            <span id="poll-stats">总共 0 人参与投票</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 邮件订阅 -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-modern-2xl card-modern p-8 floating-card shadow-floating">
+                    <div class="mb-10">
+                        <div class="flex items-center justify-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-accent to-warning rounded-full flex items-center justify-center">
+                                <span class="material-icons text-white text-xl">mail_outline</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-text-primary mb-4 text-center">订阅更新通知</h3>
+                        <p class="text-text-secondary text-center">获取最新的旅行资讯和优惠信息</p>
+                    </div>
+                    
+                    <form id="newsletter-form" class="space-y-6">
+                        <div class="relative">
+                            <input type="email" required class="w-full px-6 py-4 bg-bg-light rounded-modern-lg focus:bg-white focus:ring-2 focus:ring-primary/30 focus:ring-offset-0 outline-none transition-all text-text-primary placeholder-text-muted border-0 focus-modern" placeholder="输入您的邮箱地址">
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-accent to-warning text-white py-4 rounded-modern-lg font-semibold btn-modern btn-accent hover:from-accent-dark hover:to-warning-dark flex items-center justify-center space-x-2 shadow-button hover:shadow-button-hover transition-all duration-300">
+                            <span>订阅更新</span>
+                            <span class="material-icons text-lg">send</span>
+                        </button>
+                    </form>
+                    
+                    <p class="text-xs text-text-muted mt-6 text-center">我们承诺保护您的隐私信息</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-text-primary text-white py-16">
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                            <span class="material-icons text-white text-lg">explore</span>
+                        </div>
+                        <span class="text-xl font-semibold">探索中国</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md leading-relaxed">您通往正宗中华体验的门户。我们致力于为每位游客提供难忘的中国之旅。</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-modern flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="material-icons text-sm">facebook</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-modern flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="material-icons text-sm">camera_alt</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-modern flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="material-icons text-sm">chat</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold mb-6">快速链接</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="#destinations" class="hover:text-white transition-colors">热门目的地</a></li>
+                        <li><a href="#itineraries" class="hover:text-white transition-colors">精选行程</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">关于我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold mb-6">客户支持</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">常见问题</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">联系我们</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 探索中国. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 反馈模态框 -->
+    <div id="feedback-modal" class="fixed inset-0 bg-black bg-opacity-40 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-modern-xl shadow-modern-xl max-w-md w-full animate-scale-in">
+            <!-- 模态框头部 -->
+            <div class="p-6 border-b border-gray-100">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-semibold text-text-primary">您的想法，我们重视</h3>
+                    <button onclick="closeFeedbackModal()" class="text-gray-400 hover:text-gray-600 p-1">
+                        <span class="material-icons">close</span>
+                    </button>
+                </div>
+                <p class="text-sm text-text-secondary mt-3 leading-relaxed">特别想了解的中国旅行目的地或体验吗？欢迎分享您的想法，我们会努力为您寻找。</p>
+            </div>
+            
+            <!-- 模态框内容 -->
+            <div class="p-6">
+                <form id="feedback-form" class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-3">
+                            您最想了解的中国旅行内容？
+                        </label>
+                        <textarea required rows="4" class="w-full px-4 py-3 bg-bg-light rounded-modern focus:bg-white focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none text-text-primary placeholder-text-muted border-0 focus-modern" placeholder="例如：西藏自驾攻略、成都美食推荐、丝绸之路体验、古镇文化探索等..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-3">
+                            邮箱 <span class="text-text-muted">(可选)</span>
+                        </label>
+                        <input type="email" class="w-full px-4 py-3 bg-bg-light rounded-modern focus:bg-white focus:ring-2 focus:ring-primary/20 outline-none transition-all text-text-primary placeholder-text-muted border-0 focus-modern" placeholder="your@email.com">
+                    </div>
+                    
+                    <div class="flex gap-3 pt-2">
+                        <button type="button" onclick="closeFeedbackModal()" class="flex-1 bg-gray-100 text-text-secondary py-3 rounded-modern font-medium hover:bg-gray-200 transition-colors">
+                            取消
+                        </button>
+                        <button type="submit" class="flex-1 bg-primary text-white py-3 rounded-modern font-semibold btn-modern btn-primary hover:bg-primary-dark transition-colors shadow-button hover:shadow-button-hover">
+                            分享想法
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 城市详情模态框 -->
+    <div id="city-detail-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 overflow-y-auto">
+        <div class="min-h-screen px-4 py-8 flex items-center justify-center">
+            <div class="bg-white rounded-modern-2xl shadow-floating max-w-4xl w-full animate-scale-in max-h-[90vh] overflow-hidden">
+                <!-- 模态框头部 -->
+                <div class="relative h-64 overflow-hidden rounded-t-modern-2xl">
+                    <img id="city-hero-image" src="" alt="" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                    <div class="absolute top-4 right-4">
+                        <button onclick="closeCityModal()" class="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+                            <span class="material-icons">close</span>
+                        </button>
+                    </div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <h2 id="city-name" class="text-4xl font-bold text-white mb-2 text-shadow"></h2>
+                        <p id="city-subtitle" class="text-xl text-white/90 text-shadow"></p>
+                    </div>
+                </div>
+                
+                <!-- 模态框内容 -->
+                <div class="max-h-[calc(90vh-16rem)] overflow-y-auto">
+                    <div class="p-8">
+                        <!-- 城市介绍 -->
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold text-text-primary mb-4 flex items-center">
+                                <span class="material-icons text-primary mr-3">place</span>
+                                城市简介
+                            </h3>
+                            <p id="city-description" class="text-lg text-text-secondary leading-relaxed"></p>
+                        </div>
+
+                        <!-- 最佳旅游时间 -->
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold text-text-primary mb-4 flex items-center">
+                                <span class="material-icons text-accent mr-3">schedule</span>
+                                最佳旅游时间
+                            </h3>
+                            <div class="bg-gradient-to-r from-accent/10 to-primary/10 rounded-modern-lg p-6 border border-accent/20">
+                                <p id="city-best-time" class="text-lg text-text-secondary"></p>
+                            </div>
+                        </div>
+
+                        <!-- 热门景点 -->
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold text-text-primary mb-6 flex items-center">
+                                <span class="material-icons text-secondary mr-3">attractions</span>
+                                热门景点
+                            </h3>
+                            <div id="city-attractions" class="grid md:grid-cols-2 gap-4">
+                                <!-- 景点卡片将通过JavaScript动态生成 -->
+                            </div>
+                        </div>
+
+                        <!-- 特色美食 -->
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold text-text-primary mb-6 flex items-center">
+                                <span class="material-icons text-warning mr-3">restaurant</span>
+                                特色美食
+                            </h3>
+                            <div id="city-foods" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                                <!-- 美食卡片将通过JavaScript动态生成 -->
+                            </div>
+                        </div>
+
+                        <!-- 旅游贴士 -->
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold text-text-primary mb-6 flex items-center">
+                                <span class="material-icons text-primary mr-3">lightbulb</span>
+                                旅游贴士
+                            </h3>
+                            <div id="city-tips" class="space-y-3">
+                                <!-- 贴士列表将通过JavaScript动态生成 -->
+                            </div>
+                        </div>
+
+                        <!-- 交通住宿 -->
+                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                            <div>
+                                <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center">
+                                    <span class="material-icons text-primary mr-2">directions</span>
+                                    交通方式
+                                </h3>
+                                <div class="bg-bg-light rounded-modern-lg p-4">
+                                    <p id="city-transportation" class="text-text-secondary"></p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center">
+                                    <span class="material-icons text-accent mr-2">hotel</span>
+                                    住宿建议
+                                </h3>
+                                <div class="bg-bg-light rounded-modern-lg p-4">
+                                    <p id="city-stay" class="text-text-secondary"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 预订按钮 -->
+                        <div class="border-t border-gray-200 pt-6">
+                            <div class="grid grid-cols-2 gap-4">
+                                <button id="city-book-hotel" class="bg-gradient-to-r from-primary to-primary-light text-white py-4 px-6 rounded-modern-lg font-semibold btn-modern hover:from-primary-dark hover:to-primary flex items-center justify-center space-x-2 shadow-button hover:shadow-button-hover transition-all duration-300">
+                                    <span class="material-icons">hotel</span>
+                                    <span>预订酒店</span>
+                                </button>
+                                <button id="city-book-tour" class="bg-gradient-to-r from-secondary to-warning text-white py-4 px-6 rounded-modern-lg font-semibold btn-modern hover:from-secondary-dark hover:to-warning-dark flex items-center justify-center space-x-2 shadow-button hover:shadow-button-hover transition-all duration-300">
+                                    <span class="material-icons">tour</span>
+                                    <span>预订行程</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 目的地数据
+        // 注意：当城市数量超过9个时，"查看更多目的地"按钮会自动显示
+        // 当前有6个城市，按钮已隐藏。要添加新城市，请在下面数组中添加城市对象
+        const destinations = [
+            {
+                id: 1,
+                name: '北京',
+                image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                description: '古都风采，故宫天坛，历史与现代的完美融合',
+                highlights: ['故宫博物院', '万里长城', '天坛公园'],
+                price: '¥2,999起',
+                fullDescription: '北京，中华人民共和国首都，拥有3000多年历史的古都。这里既有恢弘壮丽的皇家建筑，也有现代化的摩天大楼，是传统文化与现代文明完美结合的典范。',
+                bestTime: '春季(4-5月)和秋季(9-10月)，气候宜人，是最佳旅游季节。',
+                attractions: [
+                    { name: '故宫博物院', description: '明清两代皇宫，世界现存最大的宫殿建筑群，UNESCO世界文化遗产', time: '建议游览4-6小时', price: '60元起', image: 'https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?w=400&h=250&fit=crop' },
+                    { name: '天安门广场', description: '中国象征性建筑，新中国成立宣告地，世界最大城市广场之一', time: '建议游览1-2小时', price: '免费', image: 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400&h=250&fit=crop' },
+                    { name: '万里长城(八达岭)', description: '世界文化遗产，中华民族象征，明代长城精华段', time: '建议游览半天', price: '45元', image: 'https://images.unsplash.com/photo-1559626988-8e52a0e3ba6a?w=400&h=250&fit=crop' },
+                    { name: '天坛公园', description: '明清皇帝祭天祈谷圣地，中国古代建筑艺术杰作', time: '建议游览2-3小时', price: '15元', image: 'https://images.unsplash.com/photo-1576076655403-aa7c2d30d319?w=400&h=250&fit=crop' },
+                    { name: '颐和园', description: '清代皇家园林，中国古典园林艺术巅峰之作', time: '建议游览3-4小时', price: '30元', image: 'https://images.unsplash.com/photo-1583255505469-3c4a25e8fac5?w=400&h=250&fit=crop' }
+                ],
+                foods: [
+                    { name: '北京烤鸭', image: 'https://images.unsplash.com/photo-1565299585323-38174c4a6471?w=200&h=150&fit=crop' },
+                    { name: '炸酱面', image: 'https://images.unsplash.com/photo-1582425146062-de4b9e8ad975?w=200&h=150&fit=crop' },
+                    { name: '豆汁儿', image: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=200&h=150&fit=crop' },
+                    { name: '驴打滚', image: 'https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=200&h=150&fit=crop' },
+                    { name: '艾窝窝', image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=200&h=150&fit=crop' }
+                ],
+                tips: [
+                    '故宫门票需提前在官网预约，旺季建议提前10天预订',
+                    '地铁1、2号线可到达主要景点，推荐购买一卡通',
+                    '天安门广场观看升旗仪式需早上4:30到达',
+                    '八达岭长城建议选择缆车上下，节省体力',
+                    '春秋两季气候宜人，是最佳旅游时间'
+                ],
+                transportation: '首都国际机场、大兴国际机场；北京站、北京南站等多个火车站；地铁网络发达',
+                stay: '建议住在二环内，交通便利，景点集中'
+            },
+            {
+                id: 2,
+                name: '上海',
+                image: 'https://images.unsplash.com/photo-1548919973-5cef591cdbc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                description: '东方巴黎，国际化大都市的魅力与活力',
+                highlights: ['外滩风光', '豫园古迹', '上海中心'],
+                price: '¥3,299起',
+                fullDescription: '上海，中国最大的经济中心，被誉为"东方巴黎"。这座城市完美融合了江南传统文化和国际现代文明，既有历史悠久的古典园林，也有世界一流的现代建筑。',
+                bestTime: '春季(3-5月)和秋季(9-11月)，气候温和，适合游览。',
+                attractions: [
+                    { name: '外滩风光带', description: '上海最著名地标，万国建筑博览群，夜景绞烂', time: '建议游览2-3小旷', price: '免费', image: 'https://images.unsplash.com/photo-1586273825103-de0b9b2ed176?w=400&h=250&fit=crop' },
+                    { name: '豫园商城', description: '明代私家花园，江南古典园林精华，传统商业街区', time: '建议游览2-3小时', price: '40元', image: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=400&h=250&fit=crop' },
+                    { name: '上海中心大厦', description: '中国第二高楼，632米观景台，俯瞰上海全景', time: '建议游览1-2小时', price: '180元', image: 'https://images.unsplash.com/photo-1587331886655-b55af6bb3a7b?w=400&h=250&fit=crop' },
+                    { name: '田子坊艺术街', description: '创意产业聚集地，石库门里弄文化，文艺品购物天堂', time: '建议游览1-2小时', price: '免赕', image: 'https://images.unsplash.com/photo-1533606736925-2cce30eafa03?w=400&h=250&fit=crop' },
+                    { name: '上海迪士尼度假区', description: '世界级主题乐园，神奇王国，家庭旅游首选', time: '建议游览一天', price: '399元起', image: 'https://images.unsplash.com/photo-1575653253712-a8a3c32befc4?w=400&h=250&fit=crop' }
+                ],
+                foods: [
+                    { name: '小笼包', image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=200&h=150&fit=crop' },
+                    { name: '生煎包', image: 'https://images.unsplash.com/photo-1582425146062-de4b9e8ad975?w=200&h=150&fit=crop' },
+                    { name: '白切鸡', image: 'https://images.unsplash.com/photo-1565299585323-38174c4a6471?w=200&h=150&fit=crop' },
+                    { name: '红烧肉', image: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=200&h=150&fit=crop' },
+                    { name: '蟹壳黄', image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=200&h=150&fit=crop' }
+                ],
+                tips: [
+                    '使用上海公交卡或支付宝，交通更便利',
+                    '外滩夜景最佳观赏时间是日落后',
+                    '南京路步行街购物需注意防范高价陷阱',
+                    '品尝本帮菜建议选择老字号餐厅'
+                ],
+                transportation: '浦东、虹桥两大国际机场；上海站、上海南站等；地铁线路密集',
+                stay: '建议住在人民广场、外滩或陆家嘴附近'
+            },
+            {
+                id: 3,
+                name: '桂林',
+                image: 'https://images.unsplash.com/photo-1556880003-4fcd06418af3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+                description: '山水甲天下，漓江美景如诗如画',
+                highlights: ['漓江游船', '芦笛岩洞', '阳朔县城'],
+                price: '¥2,599起',
+                fullDescription: '桂林，以山水之美闻名天下，"桂林山水甲天下"的美誉名不虚传。喀斯特地貌造就了这里独特的山峰林立、河流蜿蜒的绝美风光。',
+                bestTime: '4-10月，春暖花开到秋高气爽，是最佳旅游季节。',
+                attractions: [
+                    { name: '漓江', description: '世界上规模最大的喀斯特山水游览区', time: '游船全程4-5小时', price: '215元起', image: 'https://images.unsplash.com/photo-1571961718802-6e8d81ad598e?w=400&h=250&fit=crop' },
+                    { name: '芦笛岩', description: '天然溶洞，被誉为“大自然的艺术宫殿”', time: '建议游览1小时', price: '90元', image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=400&h=250&fit=crop' },
+                    { name: '象鼻山', description: '桂林城市标志，酷似巨象临江饮水', time: '建议游览1-2小时', price: '55元', image: 'https://images.unsplash.com/photo-1583419905084-c9b23a89f6e5?w=400&h=250&fit=crop' },
+                    { name: '阳朔西街', description: '中西文化交融的历史文化街区', time: '建议游览2-3小时', price: '免赕', image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400&h=250&fit=crop' },
+                    { name: '十里画廊', description: '阳朔精华景区，骑行观光胜地', time: '建议游览半天', price: '18元', image: 'https://images.unsplash.com/photo-1606819262121-b24b74fe93a3?w=400&h=250&fit=crop' }
+                ],
+                foods: [
+                    { name: '桂林米粉', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=200&h=150&fit=crop' },
+                    { name: '阳朔啤酒鱼', image: 'https://images.unsplash.com/photo-1565299585323-38174c4a6471?w=200&h=150&fit=crop' },
+                    { name: '荔浦芋扣肉', image: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=200&h=150&fit=crop' },
+                    { name: '马蹄糕', image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=200&h=150&fit=crop' },
+                    { name: '桂花糕', image: 'https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=200&h=150&fit=crop' }
+                ],
+                tips: [
+                    '漓江游船建议提前预订，选择天气晴朗的日子',
+                    '阳朔适合租自行车或电动车游览',
+                    '雨季(6-8月)河水较浑浊，影响观景',
+                    '当地湿度较大，注意防潮'
+                ],
+                transportation: '桂林两江国际机场；桂林站、桂林北站；市内公交和出租车',
+                stay: '桂林市区或阳朔县城，各有特色'
+            },
+            {
+                id: 4,
+                name: '西安',
+                image: 'https://images.unsplash.com/photo-1602136989457-fe0f69953bc1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+                description: '十三朝古都，兵马俑的故乡',
+                highlights: ['兵马俑', '古城墙', '回民街'],
+                price: '¥2,799起',
+                fullDescription: '西安，古称长安，是中华文明的重要发祥地，十三个朝代在此建都。作为古丝绸之路的起点，这里承载着深厚的历史文化底蕴。',
+                bestTime: '春季(4-5月)和秋季(9-10月)，气候适宜，是最佳旅游时节。',
+                attractions: [
+                    { name: '秦始皇兵马俑博物馆', description: '世界第八大奇迹，UNESCO世界文化遗产，震撼的地下军阵', time: '建议游览3-4小时', price: '120元', image: 'https://images.unsplash.com/photo-1570180782820-4c93a0f4b10a?w=400&h=250&fit=crop' },
+                    { name: '大雁塔·大慈恩寺', description: '唐代佛教文化圣地，玄奘法师译经之所', time: '建议游览2-3小时', price: '50元', image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop' },
+                    { name: '西安古城墙', description: '世界现存最完整的古代城垣建筑，可骑行或步行', time: '建议游览2-3小时', price: '54元', image: 'https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=400&h=250&fit=crop' },
+                    { name: '华清宫', description: '唐代皇家温泉度假村，唐玄宗与杨贵妃爱情故事发生地', time: '建议游览2-3小时', price: '120元', image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop' },
+                    { name: '大唐不夜城', description: '唐文化主题步行街，夜景绢烂，网红打卡地', time: '建议游览2-3小时', price: '免费', image: 'https://images.unsplash.com/photo-1533606736925-2cce30eafa03?w=400&h=250&fit=crop' }
+                ],
+                foods: [
+                    { name: '肉夹馍', image: 'https://images.unsplash.com/photo-1565299585323-38174c4a6471?w=200&h=150&fit=crop' },
+                    { name: '凉皮', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=200&h=150&fit=crop' },
+                    { name: '羊肉泡馍', image: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=200&h=150&fit=crop' },
+                    { name: 'biangbiang面', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=200&h=150&fit=crop' },
+                    { name: '胡辣汤', image: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=200&h=150&fit=crop' }
+                ],
+                tips: [
+                    '兵马俑建议请导游或租借讲解器',
+                    '回民街晚上更热闹，但人流量大',
+                    '古城墙可租自行车环游',
+                    '注意保护文物，不要触摸'
+                ],
+                transportation: '西安咸阳国际机场；西安站、西安北站；地铁和公交网络完善',
+                stay: '建议住在钟楼、鼓楼附近，交通便利'
+            },
+            {
+                id: 5,
+                name: '杭州',
+                image: 'https://images.unsplash.com/photo-1696162628129-eee56d1eb797?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+                description: '人间天堂，西湖美景与江南韵味',
+                highlights: ['西湖风景', '灵隐寺', '茶园观光'],
+                price: '¥2,399起',
+                fullDescription: '杭州，自古就有"人间天堂"的美誉。西湖的柔美、茶园的清香、古刹的宁静，构成了杭州独特的江南韵味。这里是马可·波罗笔下的"世界上最美丽华贵之城"。',
+                bestTime: '春季(3-5月)和秋季(9-11月)，春花烂漫，秋桂飘香。',
+                attractions: [
+                    { name: '西湖', description: '世界文化遗产，中国最著名的湖泊', time: '建议游览一天', price: '免费', image: 'https://images.unsplash.com/photo-1555650488-6371e23431d7?w=400&h=250&fit=crop' },
+                    { name: '灵隐寺', description: '中国佛教著名寺院，1600多年历史', time: '建议游览2-3小时', price: '75元', image: 'https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=400&h=250&fit=crop' },
+                    { name: '千岛湖', description: '新安江水库，有1078个翠岛', time: '建议游览一天', price: '150元起', image: 'https://images.unsplash.com/photo-1571542920004-bc1a5a7b87f4?w=400&h=250&fit=crop' },
+                    { name: '龙井茶园', description: '中国十大名茶之首的产地', time: '建议游览2-3小时', price: '免费', image: 'https://images.unsplash.com/photo-1563618106-a240c3ab7ee5?w=400&h=250&fit=crop' },
+                    { name: '宋城', description: '大型人文主题公园，《宋城千古情》', time: '建议游览半天', price: '320元起', image: 'https://images.unsplash.com/photo-1596654393321-74d2c7ae9b57?w=400&h=250&fit=crop' }
+                ],
+                foods: [
+                    { name: '西湖醋鱼', image: 'https://images.unsplash.com/photo-1565299585323-38174c4a6471?w=200&h=150&fit=crop' },
+                    { name: '东坡肉', image: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=200&h=150&fit=crop' },
+                    { name: '龙井虾仁', image: 'https://images.unsplash.com/photo-1565299585323-38174c4a6471?w=200&h=150&fit=crop' },
+                    { name: '叫化鸡', image: 'https://images.unsplash.com/photo-1565299585323-38174c4a6471?w=200&h=150&fit=crop' },
+                    { name: '片儿川', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=200&h=150&fit=crop' }
+                ],
+                tips: [
+                    '西湖免费开放，建议步行或骑自行车游览',
+                    '春季赏樱花，夏季赏荷花，秋季赏桂花',
+                    '龙井茶最佳品尝时间是清明前后',
+                    '宋城千古情演出需提前预订'
+                ],
+                transportation: '杭州萧山国际机场；杭州站、杭州东站；地铁和公交发达',
+                stay: '建议住在西湖附近，景色优美'
+            },
+            {
+                id: 6,
+                name: '成都',
+                image: 'https://images.unsplash.com/photo-1599625042924-a22b68c0e39a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+                description: '天府之国，大熊猫故乡与川菜发源地',
+                highlights: ['大熊猫基地', '川菜美食', '锦里古街'],
+                price: '¥2,199起',
+                fullDescription: '成都，一座来了就不想走的城市。这里有憨态可掬的大熊猫，有麻辣鲜香的川菜，有悠闲自在的茶馆文化，完美诠释了什么叫"慢生活"。',
+                bestTime: '春季(3-5月)和秋季(9-11月)，气候温和，适合游览。',
+                attractions: [
+                    { name: '大熊猫繁育基地', description: '世界著名的大熊猫迁地保护基地', time: '建议游览3-4小时', price: '58元', image: 'https://images.unsplash.com/photo-1578903772668-7bc96d43b5e2?w=400&h=250&fit=crop' },
+                    { name: '宽窄巷子', description: '成都三大历史文化保护区之一', time: '建议游览2-3小时', price: '免赕', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=250&fit=crop' },
+                    { name: '锦里古街', description: '成都版清明上河图，川西文化代表', time: '建议游览2-3小时', price: '免费', image: 'https://images.unsplash.com/photo-1578897733427-b4bcfc5a2b6e?w=400&h=250&fit=crop' },
+                    { name: '杜甫草堂', description: '中国文学史上的圣地', time: '建议游览2小时', price: '60元', image: 'https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=400&h=250&fit=crop' },
+                    { name: '青城山', description: '道教发源地，世界文化遗产', time: '建议游览一天', price: '90元', image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&h=250&fit=crop' }
+                ],
+                foods: [
+                    { name: '火锅', image: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=200&h=150&fit=crop' },
+                    { name: '夫妻肺片', image: 'https://images.unsplash.com/photo-1565299585323-38174c4a6471?w=200&h=150&fit=crop' },
+                    { name: '麻婆豆腐', image: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=200&h=150&fit=crop' },
+                    { name: '担担面', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=200&h=150&fit=crop' },
+                    { name: '龙抄手', image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=200&h=150&fit=crop' }
+                ],
+                tips: [
+                    '大熊猫上午较活跃，建议早去',
+                    '成都火锅偏辣，不能吃辣的要说明',
+                    '茶馆是体验成都慢生活的好地方',
+                    '春熙路是购物和品尝小吃的好去处'
+                ],
+                transportation: '成都双流国际机场、天府国际机场；成都站、成都东站；地铁网络完善',
+                stay: '建议住在春熙路、太古里或宽窄巷子附近'
+            }
+        ];
+
+        // 核心服务数据
+        const coreServices = [
+            {
+                icon: 'flight_takeoff',
+                title: '机票酒店预订',
+                description: '精选优质航班和酒店，为您的住宿提供最佳性价比选择',
+                image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop',
+                partners: [
+                    { name: 'Booking.com', type: 'booking', color: 'blue' },
+                    { name: 'Agoda', type: 'agoda', color: 'red' }
+                ]
+            },
+            {
+                icon: 'restaurant',
+                title: '美食体验',
+                description: '发现地道中华美食，品尝正宗料理和特色小吃',
+                image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=300&fit=crop',
+                partners: [
+                    { name: 'Klook', type: 'klook', color: 'orange' },
+                    { name: 'GetYourGuide', type: 'getyourguide', color: 'green' }
+                ]
+            },
+            {
+                icon: 'confirmation_number',
+                title: '景点门票',
+                description: '热门景点门票预订，跳过排队直接入场游览',
+                image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop',
+                partners: [
+                    { name: 'Viator', type: 'viator', color: 'purple' },
+                    { name: 'Tiqets', type: 'tiqets', color: 'teal' }
+                ]
+            }
+        ];
+
+        // 服务数据（保留给其他页面使用）
+        const services = [
+            {
+                icon: 'flight_takeoff',
+                title: '机票酒店预订',
+                description: '为您预订优质航班和精选酒店，确保舒适的住宿体验',
+                color: 'google-blue'
+            },
+            {
+                icon: 'tour',
+                title: '专业导游服务',
+                description: '经验丰富的中英文导游，深度解读中华文化',
+                color: 'google-green'
+            },
+            {
+                icon: 'directions_car',
+                title: '专车接送',
+                description: '舒适安全的专车服务，机场接送及景点间交通',
+                color: 'google-red'
+            },
+            {
+                icon: 'restaurant',
+                title: '美食体验',
+                description: '品尝正宗中华料理，体验地道的饮食文化',
+                color: 'google-yellow'
+            },
+            {
+                icon: 'confirmation_number',
+                title: '景点门票',
+                description: '热门景点门票预订，避免排队烦恼',
+                color: 'google-blue'
+            },
+            {
+                icon: 'support_agent',
+                title: '24小时客服',
+                description: '全天候客户服务，随时解决您的旅途问题',
+                color: 'google-green'
+            }
+        ];
+
+        // 行程数据
+        const itineraries = [
+            {
+                id: 1,
+                title: '北京经典三日游',
+                duration: '3天2夜',
+                price: '¥2,999',
+                image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                highlights: ['故宫深度游', '长城徒步', '胡同文化体验'],
+                description: '深度体验帝都文化，探索紫禁城的神秘，登临万里长城感受历史厚重。'
+            },
+            {
+                id: 2,
+                title: '上海时尚美食之旅',
+                duration: '4天3夜',
+                price: '¥3,699',
+                image: 'https://images.unsplash.com/photo-1548919973-5cef591cdbc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                highlights: ['外滩夜景', '本帮菜品鉴', '时尚购物'],
+                description: '感受魔都的现代魅力，品尝正宗上海菜，享受购物天堂的乐趣。'
+            },
+            {
+                id: 3,
+                title: '桂林山水画卷',
+                duration: '5天4夜',
+                price: '¥3,299',
+                image: 'https://images.unsplash.com/photo-1556880003-4fcd06418af3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+                highlights: ['漓江竹筏', '阳朔骑行', '印象刘三姐'],
+                description: '沉浸在如画的山水之中，体验最美的中国自然风光。'
+            },
+            {
+                id: 4,
+                title: '西安古都探秘',
+                duration: '4天3夜',
+                price: '¥2,899',
+                image: 'https://images.unsplash.com/photo-1602136989457-fe0f69953bc1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+                highlights: ['兵马俑', '华山日出', '回民街美食'],
+                description: '穿越千年历史，感受古丝绸之路的起点魅力。'
+            },
+            {
+                id: 5,
+                title: '杭州江南风情',
+                duration: '3天2夜',
+                price: '¥2,599',
+                image: 'https://images.unsplash.com/photo-1696162628129-eee56d1eb797?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+                highlights: ['西湖游船', '茶园体验', '丝绸博物馆'],
+                description: '体验江南水乡的温婉与优雅，感受诗意生活。'
+            },
+            {
+                id: 6,
+                title: '成都悠闲时光',
+                duration: '4天3夜',
+                price: '¥2,799',
+                image: 'https://images.unsplash.com/photo-1599625042924-a22b68c0e39a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+                highlights: ['大熊猫基地', '川菜学习', '宽窄巷子'],
+                description: '享受慢节奏的生活，与可爱的大熊猫亲密接触。'
+            }
+        ];
+
+        // 渲染目的地卡片
+        function renderDestinations() {
+            const grid = document.getElementById('destinations-grid');
+            grid.innerHTML = destinations.map((dest, index) => `
+                <div class="bg-white rounded-modern-2xl card-modern card-hover animate-slide-up floating-card shadow-card hover:shadow-floating cursor-pointer" style="animation-delay: ${index * 0.15}s;" onclick="openCityModal(${dest.id})">
+                    <div class="relative h-56 overflow-hidden rounded-t-modern-2xl">
+                        <img src="${dest.image}" alt="${dest.name}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
+                             onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'; this.onerror=null;">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                        <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-modern-lg px-4 py-2 shadow-card">
+                            <span class="text-sm font-bold text-primary">${dest.price}</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white mb-2 text-shadow">${dest.name}</h3>
+                        </div>
+                        <!-- 查看详情提示 -->
+                        <div class="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                            <div class="opacity-0 hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-md rounded-modern-lg px-4 py-2">
+                                <span class="text-sm font-medium text-primary flex items-center">
+                                    <span class="material-icons text-sm mr-1">visibility</span>
+                                    查看详情
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-text-secondary mb-6 leading-relaxed text-lg">${dest.description}</p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            ${dest.highlights.map((highlight, idx) => `
+                                <span class="text-sm bg-gradient-to-r from-primary/10 to-accent/10 text-primary px-4 py-2 rounded-modern-lg border border-primary/20 hover:bg-primary/20 transition-colors" style="animation-delay: ${(index * 0.1) + (idx * 0.05)}s;">${highlight}</span>
+                            `).join('')}
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="#" class="bg-gradient-to-r from-primary to-primary-light text-white py-3 px-4 rounded-modern-lg font-semibold btn-modern hover:from-primary-dark hover:to-primary flex items-center justify-center space-x-2 text-sm affiliate-link shadow-button hover:shadow-button-hover" data-destination="${dest.name}" data-type="booking" onclick="event.stopPropagation()">
+                                <span class="material-icons text-sm">hotel</span>
+                                <span>预订酒店</span>
+                            </a>
+                            <a href="#" class="bg-gradient-to-r from-secondary to-warning text-white py-3 px-4 rounded-modern-lg font-semibold btn-modern hover:from-secondary-dark hover:to-warning-dark flex items-center justify-center space-x-2 text-sm affiliate-link shadow-button hover:shadow-button-hover" data-destination="${dest.name}" data-type="tour" onclick="event.stopPropagation()">
+                                <span class="material-icons text-sm">tour</span>
+                                <span>预订行程</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            // 根据城市数量控制"查看更多目的地"按钮的显示
+            // 当前阈值：超过9个城市时显示按钮
+            const moreDestinationsBtn = document.querySelector('.text-center.mt-12');
+            if (destinations.length > 9) {
+                moreDestinationsBtn.classList.remove('hidden');
+            } else {
+                moreDestinationsBtn.classList.add('hidden');
+            }
+        }
+
+        // 渲染核心服务卡片
+        function renderCoreServices() {
+            const grid = document.getElementById('core-services-grid');
+            grid.innerHTML = coreServices.map((service, index) => `
+                <div class="bg-white rounded-modern-2xl card-modern card-hover animate-slide-up overflow-hidden floating-card shadow-floating hover:shadow-card-active" style="animation-delay: ${index * 0.2}s;">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="${service.image}" alt="${service.title}" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-transparent"></div>
+                        <div class="absolute top-6 left-6 w-16 h-16 bg-white/95 backdrop-blur-md rounded-modern-xl flex items-center justify-center shadow-floating">
+                            <span class="material-icons text-primary text-2xl">${service.icon}</span>
+                        </div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <h3 class="text-2xl font-bold text-white mb-2 text-shadow">${service.title}</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-text-secondary mb-8 leading-relaxed text-lg">${service.description}</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            ${service.partners.map((partner, idx) => {
+                                const colors = {
+                                    'booking': 'from-blue-500 to-blue-600',
+                                    'agoda': 'from-red-500 to-red-600',
+                                    'klook': 'from-orange-500 to-orange-600',
+                                    'getyourguide': 'from-green-500 to-green-600',
+                                    'viator': 'from-purple-500 to-purple-600',
+                                    'tiqets': 'from-teal-500 to-teal-600'
+                                };
+                                const colorClass = colors[partner.type] || 'from-primary to-primary-light';
+                                return `
+                                    <a href="#" class="bg-gradient-to-r ${colorClass} text-white py-3 px-4 rounded-modern-lg font-semibold btn-modern hover:scale-105 flex items-center justify-center space-x-2 text-sm affiliate-link shadow-button hover:shadow-button-hover transition-all duration-300" data-service="${service.title}" data-type="${partner.type}" style="animation-delay: ${(index * 0.1) + (idx * 0.1)}s;">
+                                        <span class="material-icons text-sm">launch</span>
+                                        <span>${partner.name}</span>
+                                    </a>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 渲染服务卡片
+        function renderServices() {
+            const grid = document.getElementById('services-grid');
+            if (grid) {
+                grid.innerHTML = services.map((service, index) => `
+                    <div class="bg-white rounded-google-xl shadow-google p-6 text-center card-hover animate-slide-up" style="animation-delay: ${index * 0.1}s;">
+                        <div class="w-16 h-16 bg-${service.color} rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="material-icons text-white text-2xl">${service.icon}</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">${service.title}</h3>
+                        <p class="text-gray-600">${service.description}</p>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // 渲染行程卡片
+        function renderItineraries() {
+            const grid = document.getElementById('itineraries-grid');
+            grid.innerHTML = itineraries.map((itinerary, index) => `
+                <div class="bg-white rounded-modern-2xl card-modern card-hover animate-slide-up floating-card shadow-floating hover:shadow-card-active" style="animation-delay: ${index * 0.15}s;">
+                    <div class="relative h-56 overflow-hidden rounded-t-modern-2xl">
+                        <img src="${itinerary.image}" alt="${itinerary.title}" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+                        <div class="absolute top-6 left-6 bg-gradient-to-r from-primary to-primary-light text-white px-4 py-2 rounded-modern-lg text-sm font-bold shadow-floating">
+                            <span class="material-icons text-xs mr-1">schedule</span>
+                            ${itinerary.duration}
+                        </div>
+                        <div class="absolute top-6 right-6 bg-white/95 backdrop-blur-md rounded-modern-lg px-4 py-2 shadow-floating">
+                            <span class="text-sm font-bold text-primary">${itinerary.price}</span>
+                        </div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <h3 class="text-2xl font-bold text-white mb-2 text-shadow">${itinerary.title}</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-text-secondary mb-6 leading-relaxed text-lg">${itinerary.description}</p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            ${itinerary.highlights.map((highlight, idx) => `
+                                <span class="text-sm bg-gradient-to-r from-primary/10 to-accent/10 text-primary px-4 py-2 rounded-modern-lg border border-primary/20 hover:bg-primary/20 transition-colors" style="animation-delay: ${(index * 0.1) + (idx * 0.05)}s;">${highlight}</span>
+                            `).join('')}
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="#" class="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 px-4 rounded-modern-lg font-semibold btn-modern hover:from-orange-600 hover:to-orange-700 flex items-center justify-center space-x-2 text-sm affiliate-link shadow-button hover:shadow-button-hover transition-all duration-300" data-itinerary="${itinerary.title}" data-type="klook">
+                                <span class="material-icons text-sm">confirmation_number</span>
+                                <span>Klook预订</span>
+                            </a>
+                            <a href="#" class="bg-gradient-to-r from-purple-500 to-purple-600 text-white py-3 px-4 rounded-modern-lg font-semibold btn-modern hover:from-purple-600 hover:to-purple-700 flex items-center justify-center space-x-2 text-sm affiliate-link shadow-button hover:shadow-button-hover transition-all duration-300" data-itinerary="${itinerary.title}" data-type="viator">
+                                <span class="material-icons text-sm">tour</span>
+                                <span>Viator预订</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 平滑滚动导航
+        function setupSmoothScroll() {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // 关闭移动端菜单
+                        document.getElementById('mobile-menu').classList.add('hidden');
+                    }
+                });
+            });
+        }
+
+        // 移动端菜单切换
+        function setupMobileMenu() {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // 点击菜单项后自动关闭菜单
+            document.querySelectorAll('#mobile-menu .nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+        
+        // 单独的切换函数，供其他地方调用
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // 联盟链接跟踪
+        function setupAffiliateLinks() {
+            document.querySelectorAll('.affiliate-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const destination = this.dataset.destination || this.dataset.itinerary || this.dataset.service;
+                    const type = this.dataset.type;
+                    
+                    // 跟踪点击事件
+                    console.log(`联盟链接点击: ${destination} - ${type}`);
+                    
+                    // 这里添加实际的联盟链接
+                    const affiliateUrls = {
+                        booking: `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(destination || '中国')}`,
+                        agoda: `https://www.agoda.com/search?city=${encodeURIComponent(destination || '中国')}`,
+                        tour: `https://www.viator.com/searchresults/all?text=${encodeURIComponent(destination || '中国')}`,
+                        klook: `https://www.klook.com/zh-CN/search/?query=${encodeURIComponent(destination || '中国')}`,
+                        viator: `https://www.viator.com/searchresults/all?text=${encodeURIComponent(destination || '中国')}`,
+                        getyourguide: `https://www.getyourguide.com/s/?q=${encodeURIComponent(destination || '中国')}`,
+                        tiqets: `https://www.tiqets.com/en/search?query=${encodeURIComponent(destination || '中国')}`
+                    };
+                    
+                    // 在新窗口打开联盟链接
+                    window.open(affiliateUrls[type] || '#', '_blank');
+                });
+            });
+        }
+
+        // 投票功能数据
+        const pollOptions = [
+            { id: 'custom-tours', text: '个性化定制行程', icon: 'edit_location_alt', votes: 0 },
+            { id: 'local-guides', text: '当地导游服务', icon: 'person_pin_circle', votes: 0 },
+            { id: 'food-tours', text: '美食专项旅行', icon: 'restaurant', votes: 0 },
+            { id: 'budget-trips', text: '经济实惠路线', icon: 'savings', votes: 0 },
+            { id: 'luxury-travel', text: '豪华精品旅行', icon: 'diamond', votes: 0 },
+            { id: 'cultural-deep', text: '深度文化体验', icon: 'temple_buddhist', votes: 0 }
+        ];
+
+        // 渲染投票选项
+        function renderPoll() {
+            const pollContainer = document.getElementById('feature-poll');
+            const totalVotes = pollOptions.reduce((sum, option) => sum + option.votes, 0);
+            
+            pollContainer.innerHTML = `
+                <div class="space-y-6">
+                    <div class="relative">
+                        <select id="poll-select" class="w-full px-6 py-4 bg-gradient-to-r from-bg-light to-bg-lighter rounded-modern-lg focus:bg-white focus:ring-2 focus:ring-primary/30 outline-none transition-all text-text-primary border-0 appearance-none cursor-pointer focus-modern shadow-card hover:shadow-card-hover">
+                            <option value="">🗳️ 选择您最感兴趣的服务</option>
+                            ${pollOptions.map(option => {
+                                const votes = option.votes;
+                                const percentage = totalVotes > 0 ? (votes / totalVotes * 100).toFixed(1) : 0;
+                                const displayText = votes > 0 ? `${option.text} (${votes}票, ${percentage}%)` : option.text;
+                                return `<option value="${option.id}">${displayText}</option>`;
+                            }).join('')}
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center pr-6 pointer-events-none">
+                            <span class="material-icons text-primary">keyboard_arrow_down</span>
+                        </div>
+                    </div>
+                    
+                    <button id="vote-button" class="w-full bg-gradient-to-r from-primary to-primary-light text-white py-4 rounded-modern-lg font-bold btn-modern hover:from-primary-dark hover:to-primary transition-all duration-300 disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed shadow-button hover:shadow-button-hover flex items-center justify-center space-x-2" disabled>
+                        <span class="material-icons">how_to_vote</span>
+                        <span>投票</span>
+                    </button>
+                </div>
+            `;
+            
+            document.getElementById('poll-stats').textContent = `总共 ${totalVotes} 人参与投票`;
+            
+            // 添加选择框监听事件
+            const selectElement = document.getElementById('poll-select');
+            const voteButton = document.getElementById('vote-button');
+            
+            selectElement.addEventListener('change', function() {
+                voteButton.disabled = this.value === '';
+            });
+            
+            // 添加投票按钮事件
+            voteButton.addEventListener('click', function() {
+                const selectedValue = selectElement.value;
+                if (selectedValue) {
+                    const selectedOption = pollOptions.find(opt => opt.id === selectedValue);
+                    if (selectedOption) {
+                        selectedOption.votes++;
+                        
+                        // 重置选择和按钮
+                        selectElement.value = '';
+                        voteButton.disabled = true;
+                        
+                        // 重新渲染
+                        renderPoll();
+                        
+                        // 显示成功提示
+                        showSuccessToast('投票成功', 'check_circle', 'blue');
+                    }
+                }
+            });
+        }
+
+        // 反馈模态框
+        function openFeedbackModal() {
+            document.getElementById('feedback-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeFeedbackModal() {
+            document.getElementById('feedback-modal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // 城市详情模态框
+        function openCityModal(cityId) {
+            const city = destinations.find(dest => dest.id === cityId);
+            if (!city) return;
+
+            // 填充模态框内容
+            document.getElementById('city-hero-image').src = city.image;
+            document.getElementById('city-hero-image').alt = city.name;
+            document.getElementById('city-name').textContent = city.name;
+            document.getElementById('city-subtitle').textContent = city.description;
+            document.getElementById('city-description').textContent = city.fullDescription;
+            document.getElementById('city-best-time').textContent = city.bestTime;
+            document.getElementById('city-transportation').textContent = city.transportation;
+            document.getElementById('city-stay').textContent = city.stay;
+
+            // 渲染景点列表
+            const attractionsContainer = document.getElementById('city-attractions');
+            attractionsContainer.innerHTML = city.attractions.map((attraction, index) => `
+                <div class="bg-white rounded-modern-lg shadow-card attraction-card animate-slide-up hover:shadow-card-hover p-4" style="animation-delay: ${index * 0.1}s;">
+                    <div class="flex items-start justify-between mb-3">
+                        <h4 class="font-bold text-text-primary text-lg">${attraction.name}</h4>
+                        <span class="text-primary font-bold text-sm bg-primary/10 px-2 py-1 rounded-modern">${attraction.price}</span>
+                    </div>
+                    <p class="text-text-secondary text-sm mb-3 leading-relaxed">${attraction.description}</p>
+                    <div class="flex items-center text-xs text-text-muted bg-bg-light rounded-modern p-2">
+                        <span class="material-icons text-xs mr-1">schedule</span>
+                        <span>${attraction.time}</span>
+                    </div>
+                </div>
+            `).join('');
+
+            // 渲染美食标签
+            const foodsContainer = document.getElementById('city-foods');
+            foodsContainer.innerHTML = city.foods.map((food, index) => `
+                <div class="food-tag bg-white rounded-modern-lg shadow-card hover:shadow-card-hover animate-slide-up cursor-pointer group p-3" style="animation-delay: ${index * 0.1}s;">
+                    <span class="text-text-primary font-medium text-sm flex items-center justify-center">
+                        <span class="material-icons text-warning mr-1 text-sm">restaurant</span>
+                        ${food.name}
+                    </span>
+                </div>
+            `).join('');
+
+            // 渲染旅游贴士
+            const tipsContainer = document.getElementById('city-tips');
+            tipsContainer.innerHTML = city.tips.map((tip, index) => `
+                <div class="flex items-start space-x-3 p-4 bg-gradient-to-r from-primary/5 to-accent/5 rounded-modern-lg border-l-4 border-primary animate-slide-up" style="animation-delay: ${index * 0.1}s;">
+                    <span class="material-icons text-primary text-xl flex-shrink-0 mt-0.5">lightbulb</span>
+                    <p class="text-text-secondary">${tip}</p>
+                </div>
+            `).join('');
+
+            // 设置预订按钮事件
+            document.getElementById('city-book-hotel').onclick = (e) => {
+                e.preventDefault();
+                const affiliateUrls = {
+                    booking: `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(city.name)}`,
+                };
+                window.open(affiliateUrls.booking, '_blank');
+            };
+
+            document.getElementById('city-book-tour').onclick = (e) => {
+                e.preventDefault();
+                const affiliateUrls = {
+                    tour: `https://www.viator.com/searchresults/all?text=${encodeURIComponent(city.name)}`,
+                };
+                window.open(affiliateUrls.tour, '_blank');
+            };
+
+            // 显示模态框
+            document.getElementById('city-detail-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCityModal() {
+            document.getElementById('city-detail-modal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // 显示成功提示
+        function showSuccessToast(message, icon = 'check_circle', color = 'blue') {
+            const toast = document.createElement('div');
+            toast.className = 'fixed top-24 right-6 bg-white rounded-lg shadow-lg z-50 p-3 max-w-sm transform translate-x-full transition-transform duration-300 border border-gray-100';
+            toast.innerHTML = `
+                <div class="flex items-center space-x-2">
+                    <span class="material-icons text-${color}-600 text-lg">${icon}</span>
+                    <span class="font-medium text-gray-900 text-sm">${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(toast);
+            
+            // 动画显示
+            setTimeout(() => {
+                toast.style.transform = 'translateX(0)';
+            }, 100);
+            
+            // 自动消失
+            setTimeout(() => {
+                toast.style.transform = 'translateX(100%)';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+
+        // 反馈表单提交
+        function setupFeedbackForm() {
+            document.getElementById('feedback-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const feedback = this.querySelector('textarea').value;
+                const email = this.querySelector('input[type="email"]').value;
+                
+                // 这里可以添加发送到后端的逻辑
+                console.log('反馈提交:', { feedback, email });
+                
+                // 显示成功消息
+                showSuccessToast('已收到您的反馈', 'check_circle', 'blue');
+                closeFeedbackModal();
+                this.reset();
+            });
+        }
+
+        // 邮件订阅
+        function setupNewsletterForm() {
+            document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = this.querySelector('input[type="email"]').value;
+                
+                // 这里可以添加邮件订阅逻辑
+                console.log('邮件订阅:', email);
+                
+                // 显示成功消息
+                showSuccessToast('订阅成功', 'check_circle', 'blue');
+                this.reset();
+            });
+        }
+
+        // 滚动动画观察器
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            // 观察所有动画元素
+            document.querySelectorAll('.animate-slide-up, .animate-fade-in').forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCoreServices();
+            renderDestinations();
+            renderServices();
+            renderItineraries();
+            renderPoll();
+            setupSmoothScroll();
+            setupMobileMenu();
+            setupAffiliateLinks();
+            setupFeedbackForm();
+            setupNewsletterForm();
+            setupScrollAnimations();
+        });
+
+        // 添加滚动效果导航栏
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-google-lg');
+            } else {
+                navbar.classList.remove('shadow-google-lg');
+            }
+        });
+    </script>
+</body>
+</html>
